@@ -1,0 +1,9 @@
+<div style="border: 1px solid #000; margin-bottom: 16px; ">
+	<div *ngFor="let star of stars" style="float:left">
+		<app-star></app-star>
+	</div>
+	<div>
+		<app-star *ngIf="value % Math.trunc(value) != 0" [parcial]="value % Math.trunc(value)" style="float:left"></app-star>
+	</div>
+	<div style="float: none; clear: both;"></div>
+</div>
