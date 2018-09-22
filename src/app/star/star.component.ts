@@ -7,7 +7,8 @@ import * as d3 from "d3";
 	styleUrls: ["./star.component.css"]
 })
 export class StarComponent implements OnInit {
-	@Input() parcial: string;
+	@Input()
+	parcial: string;
 	numPoints = 5;
 
 	constructor(private element: ElementRef) {}
@@ -52,7 +53,7 @@ export class StarComponent implements OnInit {
 			.attr("height", height);
 
 		const points = d3.range(this.numPoints).map(i => {
-			const angle = -(i / this.numPoints * Math.PI * 2 + Math.PI + 2.5);
+			const angle = -((i / this.numPoints) * Math.PI * 2 + Math.PI + 2.5);
 			console.log(angle);
 			return {
 				x: Math.sin(angle) * radius + centerX,
